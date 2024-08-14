@@ -16,7 +16,7 @@ jobs:
           terraform_version: 1.5.0
 
       - name: Terraform Init
-        working-directory: infra/terraform
+        working-directory: infra
         run: terraform init
 
       - name: Terraform Plan
