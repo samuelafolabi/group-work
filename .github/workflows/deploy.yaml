@@ -10,6 +10,13 @@ jobs:
     name: Setup and Apply Terraform
     runs-on: ubuntu-latest
     steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: List Directory Contents
+        run: ls -la infra/
+
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
         with:
