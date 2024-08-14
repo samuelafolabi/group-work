@@ -49,7 +49,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1.1.3
         with:
           task-definition: taskDefinition.json
-          container-name: ${{ secrets.AWS_ECS_CONTAINER_NAME }}
+          container-name: ${{ secrets.CONTAINER_NAME }}
           image: ${{ steps.build-docker-image.outputs.IMAGE_URI }}
 
 
