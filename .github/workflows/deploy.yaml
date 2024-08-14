@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List Directory Contents
-        run: ls -la infra/
+        run: ls -la infra2/
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
@@ -23,19 +23,19 @@ jobs:
           terraform_version: 1.5.0
 
       - name: Terraform Init
-        working-directory: infra/
+        working-directory: infra2/
         run: terraform init
 
       - name: Terraform Plan
-        working-directory: infra/
-        run: terraform plan -out=tfplan
+        working-directory: infra2/
+        run: terraform plan -out=tfplan   
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
 
       - name: Terraform Apply
-        working-directory: infra/
+        working-directory: infra2/
         run: terraform apply -auto-approve tfplan
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}

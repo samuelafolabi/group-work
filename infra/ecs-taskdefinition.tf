@@ -1,4 +1,6 @@
+
 resource "aws_cloudwatch_log_group" "app_log_group" {
+  count = data.aws_cloudwatch_log_group.existing_log_group.id == "" ? 1 : 0
   name              = "${var.app_name}-logs"
   retention_in_days = 7  # Set this to your desired retention period
 }
