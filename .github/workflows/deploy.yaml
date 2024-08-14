@@ -27,15 +27,15 @@ jobs:
 
       - name: Terraform Init
         working-directory: ./infra
-        run: infra init
+        run:  terraform init
 
       - name: Terraform Plan
         working-directory: ./infra
-        run: infra plan
+        run: terraform plan
 
       - name: Terraform Apply
         working-directory: ./infra
-        run: infra apply -auto-approve
+        run: terraform apply -auto-approve
 
   build-and-deploy:
     needs: terraform
