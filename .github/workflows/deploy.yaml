@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - develop
 
 jobs:
   terraform:
@@ -27,13 +26,16 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Terraform Init
-        run: terraform init
+        working-directory: ./infra
+        run: infra init
 
       - name: Terraform Plan
-        run: terraform plan
+        working-directory: ./infra
+        run: infra plan
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        working-directory: ./infra
+        run: infra apply -auto-approve
 
   build-and-deploy:
     needs: terraform
