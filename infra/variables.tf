@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "The AWS region to deploy to"
-  default     = "us-east-1"
+  default     = "eu-west-2"
 }
 
 variable "app_name" {
@@ -15,12 +15,12 @@ variable "app_port" {
 
 variable "az_1" {
   description = "Number of AZs to cover in a given region"
-  default     = "us-east-1"
+  default     = "eu-west-2a"
 }
 
 variable "az_2" {
   description = "Number of AZs to cover in a given region"
-  default     = "us-east-1"
+  default     = "eu-west-2b"
 }
 
 variable "ecs_task_desired_count" {
