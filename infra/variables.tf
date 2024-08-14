@@ -18,12 +18,6 @@ variable "app_port" {
   default     = 80
 }
 
-#variable "az_count" {
-#  description = "Number of AZs to cover in a given region"
-#  type        = number
-#  default     = 2
-#}
-
 variable "az_1" {
   description = "Number of AZs to cover in a given region"
   default     = "eu-west-2a"
